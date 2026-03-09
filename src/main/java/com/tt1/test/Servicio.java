@@ -3,23 +3,12 @@ package com.tt1.test;
 import java.util.*;
 
 public class Servicio{
-	public static void main(String args[]) {
-		throw new UnsupportedOperationException("Clase aún no implementada.");
-	}
-	
-	public boolean crearToDo(String nombre, Date fechaLimite) {
-		throw new UnsupportedOperationException("Clase aún no implementada.");
-	}
-	
-	public boolean annadirCorreo(String email) {
-		throw new UnsupportedOperationException("Clase aún no implementada.");
-	}
-	
-	public boolean marcarCompletada(ToDo toDo) {
-		throw new UnsupportedOperationException("Clase aún no implementada.");
-	}
-	
-	public List<ToDo> obtenerSinCompletar(){
-		throw new UnsupportedOperationException("Clase aún no implementada.");
-	}
+	private Repositorio repo;
+    private MailerStub mailer;
+
+    public void crearTarea(String nombre, Date fecha) { throw new UnsupportedOperationException("Clase aún no implementada."); }
+    public void agregarEmailAgenda(String email) { throw new UnsupportedOperationException("Clase aún no implementada."); }
+    public void completarTarea(String nombre) { throw new UnsupportedOperationException("Clase aún no implementada."); }
+    public List<ToDo> consultarPendientes() { throw new UnsupportedOperationException("Clase aún no implementada."); }
+    private void verificarAlertasYEnviarCorreos() { throw new UnsupportedOperationException("Clase aún no implementada."); }
 }

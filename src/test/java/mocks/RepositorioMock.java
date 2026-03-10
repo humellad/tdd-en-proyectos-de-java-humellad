@@ -2,7 +2,7 @@ package mocks;
 
 import java.util.*;
 import com.tt1.test.*;
-import interfaces.IRepositorio;
+import Interfaces.IRepositorio;
 
 public class RepositorioMock implements IRepositorio {
     public boolean guardarLlamado = false;

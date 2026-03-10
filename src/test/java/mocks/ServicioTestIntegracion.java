@@ -23,11 +23,12 @@ public class ServicioTestIntegracion {
     void testIntegracionTareaVencidaEnviaCorreo() {
         String email = "alumno@unirioja.es";
         String nombreTarea = "Entregar Práctica TDD";
+        String descripcion = "Practica 3 TT1";
         Calendar cal = Calendar.getInstance();
-        Date fechaPasada = cal.getTime();
+        Date fecha = cal.getTime();
 
         servicio.agregarEmailAgenda(email);
-        servicio.crearTarea(nombreTarea, fechaPasada);
+        servicio.crearTarea(nombreTarea, descripcion, fecha);
         List<ToDo> pendientes = servicio.consultarPendientes();
         assertNotNull(pendientes);
     }

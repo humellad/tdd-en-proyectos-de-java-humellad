@@ -1,6 +1,6 @@
 package mocks;
 
-import interfaces.IMailerStub;
+import Interfaces.IMailerStub;
 
 public class MailerStubMock implements IMailerStub {
 	public boolean llamado = false;

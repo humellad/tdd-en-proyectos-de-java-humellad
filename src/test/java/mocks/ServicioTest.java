@@ -4,8 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.*;
 import com.tt1.test.*;
-
-import interfaces.*;
+import Interfaces.*;
 
 public class ServicioTest {
 	private Servicio servicio;

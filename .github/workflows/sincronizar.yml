@@ -1,0 +1,40 @@
+name: "Tests y Auto-sync a Early"
+
+on:
+  push:
+    branches:
+      - main  # Se dispara con cada commit en main
+
+permissions:
+  contents: write # Necesario para poder actualizar la rama early
+
+jobs:
+  test-and-promote:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Trae todo el historial para poder hacer el push a otra rama
+
+      - name: Configurar JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Ejecutar Tests Unitarios e Integración
+        run: mvn test # Si un test falla, el job se detiene aquí y no actualiza 'early'
+
+      - name: Actualizar rama Early
+        if: success() # Solo se ejecuta si el paso anterior (mvn test) fue exitoso
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Forzamos que 'early' sea exactamente igual a 'main' tras pasar los tests
+          git checkout early || git checkout -b early
+          git reset --hard main
+          git push origin early --force

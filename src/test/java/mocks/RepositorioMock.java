@@ -18,7 +18,7 @@ public class RepositorioMock implements IRepositorio {
         return emailsSimulados.contains(email);
     }
     
-    public void añadirEmailManual(String email) {
+    public void annadirEmailManual(String email) {
         emailsSimulados.add(email);
     }
 

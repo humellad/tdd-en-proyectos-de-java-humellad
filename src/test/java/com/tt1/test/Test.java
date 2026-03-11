@@ -25,9 +25,5 @@ class Test {
 	void tearDown() throws Exception {
 	}
 
-	@org.junit.jupiter.api.Test
-	void test() {
-		fail("Not yet implemented");
-	}
-	
 }
+
